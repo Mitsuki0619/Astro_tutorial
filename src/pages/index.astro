@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Counter } from "../components/Counter";
+import { VisibleTest } from "../components/VisibleTest";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -19,15 +20,16 @@ import { Counter } from "../components/Counter";
     </li>
     <li>
       <span>client:media</span>
-      <Counter client:media="(min-width: 680px)" />
-    </li>
-    <li>
-      <span>client:visible</span>
-      <Counter client:visible />
+      <Counter client:media="(max-width: 680px)" />
     </li>
     <li>
       <span>client:only</span>
-      <Counter client:only />
+      <Counter client:only="react" />
+    </li>
+    <div style="height: 200vh;">blank</div>
+    <li>
+      <span>client:visible</span>
+      <VisibleTest client:visible />
     </li>
   </ul>
 </Layout>
