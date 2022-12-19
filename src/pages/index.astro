@@ -1,30 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Counter } from "../components/Counter";
+import { ReactCounter } from "../components/ReactCounter";
 import { VisibleTest } from "../components/VisibleTest";
+import SvelteCounter from "../components/SvelteCounter.svelte";
+import VueCounter from "../components/VueCounter.vue";
 ---
 
 <Layout title="Welcome to Astro.">
   <ul>
     <li>
       <span>static</span>
-      <Counter />
+      <ReactCounter />
     </li>
     <li>
       <span>client:load</span>
-      <Counter client:load />
+      <ReactCounter client:load />
     </li>
     <li>
       <span>client:idle</span>
-      <Counter client:idle />
+      <SvelteCounter client:idle />
     </li>
     <li>
       <span>client:media</span>
-      <Counter client:media="(max-width: 680px)" />
+      <VueCounter client:media="(max-width: 680px)" />
     </li>
     <li>
       <span>client:only</span>
-      <Counter client:only="react" />
+      <ReactCounter client:only="react" />
     </li>
     <div style="height: 200vh;">blank</div>
     <li>
